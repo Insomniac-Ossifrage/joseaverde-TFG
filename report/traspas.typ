@@ -58,7 +58,7 @@
 #let code(
   contents,
   caption: none,
-  tag:     "") = [
+  tag:     none) = [
     #show figure: set block(breakable: true)
     #figure(
     [
@@ -66,8 +66,10 @@
       #contents
     ],
     caption: caption)
-    #label(tag)
-  ]
+    #if tag != none {
+      label(tag)
+    }
+]
 
 
 // START
